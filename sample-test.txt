@@ -1,0 +1,17 @@
+request({
+  uri: "http://hostname/j_security_check",
+  method: "POST",
+  json:{"j_username":"username",
+        "j_password":"password"},
+  
+        headers: {
+                "Content-Type": "application/json"
+               
+        }
+}, function(error, response, body) {
+var name = response.headers["set-cookie"];
+var name_split = name[0].split(";");
+var cookie = name_split[0].split(",");
+var finalcookie = cookie[0];
+
+});
